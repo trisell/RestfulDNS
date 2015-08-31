@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>OpenStack DNS Registration</title>
+	</head>
+	
+	<style>
+		body {background-color:lightgray}
+		h1   {color:black}
+		p    {color:green}
+		h3   {color:red}
+	</style>
+
+	<body>
+		<h1>Register a Host</h1>
+		<form action="" method="post" name="register">
+
+		{{ form.hidden_tag()}}
+		<p>
+			Please enter the Hostname, do not append the domain, as it will be oppended for you:</br>
+			{{ form.hostname(size=40)}}</br>
+		</p>
+		<p>
+			Please enter the Floating IP of the Host:</br>
+			{{ form.ipaddress(size=40)}}</br>
+		</p>
+		<h3>
+			{% with messages = get_flashed_messages() %} {% if messages %}
+			{% for message in messages %}
+			{{ message }}
+			{% endfor %}
+			{% endif %}
+			{% endwith %}
+		</h3>   
+		<p><input type="submit" value="Register"></p>
+		</form>

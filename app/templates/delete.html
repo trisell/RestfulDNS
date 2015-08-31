@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>OpenStack DNS Record Delete</title>
+	</head>
+	
+	<style>
+		body {background-color:lightgray}
+		h1   {color:black}
+		p    {color:green}
+		h3   {color:red}
+	</style>
+
+	<body>
+		<h1>Delete a Host</h1>
+		<form action="" method="post" name="delete">
+
+		{{ form.hidden_tag()}}
+		<p>
+			Please enter the hostname you would like to delete:</br>
+			{{ form.hostname(size=40)}}</br>
+		</p>
+		<p>
+			Please enter the Floating IP of the Host that you want to delete:</br>
+			{{ form.ipaddress(size=40)}}</br>
+		</p>
+		<h3>
+			{% with messages = get_flashed_messages() %} {% if messages %}
+			{% for message in messages %}
+			{{ message }}
+			{% endfor %}
+			{% endif %}
+			{% endwith %}
+		</h3>  
+		<p><input type="submit" value="Delete"></p>
+		</form>

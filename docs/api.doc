@@ -1,0 +1,40 @@
+POST /api/v1.0/users
+Allows creation of users for RESTfulDNS application
+
+JSON variables
+username = username for API user
+password = password for API user
+
+
+example query
+curl -i -k -H "Content-Type: application/json" -X POST -d '{"username":"test","password":"test"}' http://dnsapp.com/api/v1.0/users
+
+
+GET /api/v1.0/Token
+REQUIRES AUTHENTICATION
+
+Request token for successfully authenticated user.
+
+example query
+curl -i -k -H "Content-Type: application/json" -X GET http://dnsapp.com/api/v1.0/token
+
+GET /api/v1.0/dns
+REQUIRES AUTHENTICATION
+
+Returns full list of all registered hosts in hosts.txt file.
+
+example query
+curl -i -k -H -u test:test "Content-Type: application/json" -X GET http://dnsapp.com/api/v1.0/dns
+
+POST /api/v1.0/dns
+REQUIRES AUTEHTICATION
+
+Registers new hostname and IP address for resolution by dns server. Please contact administrator regarding needing to add domain name to hostname.
+
+JSON variables
+
+hostname = name for to be registered host
+ipaddress = IP address for to be registered host.
+
+example query
+curl -i -k -H -u test:test "Content-Type: application/json" -d '{"hostname":"test","ipaddress":"10.0.0.2"}' -X GET http://dnsapp.com/api/v1.0/dns
