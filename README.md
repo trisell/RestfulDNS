@@ -1,7 +1,7 @@
 # RestfulDNS
 
 RestfulDNS is a rest api and web app wrapper for dnsmasq written in Python using the Flask web framework. It allows for the creation, deletion, and listing of dns records to provide DNS as a service. 
-It is useful in an environment such as an internal Openstack where you have a large number of developers wanting to register and remove DNS records, without having to have somebody process that each request.
+It is useful in an environment such as an internal Openstack where you have a large number of developers wanting to register and remove DNS records, without having to have somebody process each request.
 
 
 My prefered method of running this is to use the flask built in webserver, and use an nginx ssl proxy to handle SSL offloading. It is much faster and easier to configure, then trying to run SSL in flask.
