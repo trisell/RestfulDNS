@@ -67,7 +67,7 @@ class DNSAPI(Resource):
         records = {}
         ipaskey = {}
         # Places records into records dict with hostname as key IP address as value for parsing hostname delete requests.
-        self.hostaskey(records)
+        hostaskey(self, records)
         # Places records into ipaskey dict with IP address as key, hostname as value, for parsing IP address delete requests.
         with open('./test.txt', 'r+b') as f:
             for line in f:
